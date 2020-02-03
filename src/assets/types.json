@@ -1,0 +1,25 @@
+[{
+        "nombre": "Extractos",
+        "children": [{
+                "nombre": "Tarjeta de crédito",
+                "numero": "123456"
+            },
+            {
+                "nombre": "Tarjeta Débito",
+                "numero": "123456"
+            }
+        ]
+    },
+    {
+        "nombre": "Certificados",
+        "children": [{
+                "nombre": "Tarjeta de crédito",
+                "numero": "123456"
+            },
+            {
+                "nombre": "Tarjeta Débito",
+                "numero": "123456"
+            }
+        ]
+    }
+]

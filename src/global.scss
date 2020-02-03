@@ -9,18 +9,68 @@
  * https://ionicframework.com/docs/layout/global-stylesheets
  */
 
+
 /* Core CSS required for Ionic components to work properly */
+
 @import "~@ionic/angular/css/core.css";
 
 /* Basic CSS for apps built with Ionic */
+
 @import "~@ionic/angular/css/normalize.css";
 @import "~@ionic/angular/css/structure.css";
 @import "~@ionic/angular/css/typography.css";
 @import '~@ionic/angular/css/display.css';
 
 /* Optional CSS utils that can be commented out */
+
 @import "~@ionic/angular/css/padding.css";
 @import "~@ionic/angular/css/float-elements.css";
 @import "~@ionic/angular/css/text-alignment.css";
 @import "~@ionic/angular/css/text-transformation.css";
 @import "~@ionic/angular/css/flex-utils.css";
+@keyframes slideLeft {
+    from {
+        transform: translate3d(0, 0, 0);
+    }
+    to {
+        transform: translate3d(-100%, 0, 0);
+    }
+}
+
+@keyframes slideCenter {
+    from {
+        transform: translate3d(-100%, 0, 0);
+    }
+    to {
+        transform: translate3d(0, 0, 0);
+    }
+}
+
+.accordion--item.show {
+    transform: translate3d(0, 0, 0);
+    transition: max-height 0.3s ease-out 0.1s, transform 0.5s ease-out 0.3s;
+    & .accordion--header {
+        transform: translate3d(0, 0, 0);
+        transition: max-height 0.3s ease-out 0.1s, transform 0.5s ease-out 0.3s;
+    }
+    & .accordion--content {
+        transform: translate3d(0, 0, 0);
+        transition: max-height 0.3s ease-out 0.1s, transform 0.5s ease-out 0.3s;
+    }
+}
+
+.accordion--item.hide {
+    transform: translate3d(-100%, 0, 0);
+    max-height: 0;
+    transition: max-height 0.3s ease-out 0.5s, transform 0.5s ease-out;
+    & .accordion--header {
+        transform: translate3d(-100%, 0, 0);
+        max-height: 0;
+        transition: max-height 0.3s ease-out 0.5s, transform 0.5s ease-out;
+    }
+    & .accordion--content {
+        transform: translate3d(-100%, 0, 0);
+        max-height: 0;
+        transition: max-height 0.3s ease-out 0.5s, transform 0.5s ease-out;
+    }
+}

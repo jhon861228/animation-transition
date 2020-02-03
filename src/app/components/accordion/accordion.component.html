@@ -1,0 +1,8 @@
+<button #el class="accordion" (click)="toggleHelper()">
+  <ng-content select="[slot=header]"></ng-content>
+  <!-- <slot name="header"></slot> -->
+</button>
+<div class="panel">
+    <ng-content select="[slot=details]"></ng-content>
+    <!--<slot name="details"></slot>-->
+</div>
