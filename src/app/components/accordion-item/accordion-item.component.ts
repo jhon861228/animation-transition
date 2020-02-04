@@ -33,11 +33,16 @@ export class AccordionItemComponent implements OnInit, AfterContentInit, AfterVi
 
   ngOnInit() {
     this.sharedService.chatMessageAdded.subscribe((data) => {
-      if (data.nombre !== this.item.nombre) {
-        this.validateComponent(false);
+      if(data === undefined || data === null) {
+        this.show(false);
       } else {
-        this.validateComponent(true);
+        if (data.nombre !== this.item.nombre) {
+          this.validateComponent(false);
+        } else {
+          this.validateComponent(true);
+        }
       }
+      
     });
   }
 
@@ -62,6 +67,10 @@ export class AccordionItemComponent implements OnInit, AfterContentInit, AfterVi
     if (showContent) {
       this.content.forEach((content) => {
         content.show();
+      });
+    } else {
+      this.content.forEach((content) => {
+        content.hide();
       });
     }
   }

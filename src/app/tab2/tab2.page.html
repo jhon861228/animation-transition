@@ -15,7 +15,7 @@
         </span>
     </custom-accordion>
 
-    <app-accordion-container>
+    <app-accordion-container [hideItems]="hideItems">
         <app-accordion-item [item]="type" *ngFor="let type of types">
             <app-accordion-header [item]="type">
                 {{type.nombre}}
@@ -25,5 +25,5 @@
             </app-accordion-content>
         </app-accordion-item>
     </app-accordion-container>
-
+    <button (click)="hideAllItems()">Ocutar</button>
 </ion-content>
